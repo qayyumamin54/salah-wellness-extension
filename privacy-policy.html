@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Salah & Wellness Break</title>
+  <meta name="description" content="Privacy Policy for Salah & Wellness Break Chrome Extension by Qayyum Amin." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c8aa64;
+      --gold-light: #e8d5a0;
+      --gold-dim: rgba(200, 170, 100, 0.18);
+      --bg: #080f1a;
+      --bg2: #0d1825;
+      --bg3: #121f30;
+      --text: #d8ceb8;
+      --text-dim: rgba(216, 206, 184, 0.5);
+      --text-bright: #ede8d8;
+      --border: rgba(200, 170, 100, 0.14);
+      --green: #4daa7a;
+      --radius: 16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Background texture ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 10%, rgba(200,160,60,0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(13,40,80,0.5) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Subtle geometric pattern */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        60deg,
+        transparent,
+        transparent 40px,
+        rgba(200,170,100,0.012) 40px,
+        rgba(200,170,100,0.012) 41px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 80px 24px 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(13,30,50,0.8) 0%, transparent 100%);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,170,100,0.08);
+      border: 1px solid rgba(200,170,100,0.2);
+      border-radius: 30px;
+      padding: 6px 18px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .hero-mosque {
+      font-size: 56px;
+      display: block;
+      margin-bottom: 20px;
+      animation: fadeDown 0.6s 0.1s ease both;
+      filter: drop-shadow(0 0 30px rgba(200,160,60,0.3));
+    }
+
+    .hero h1 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: clamp(36px, 6vw, 58px);
+      font-weight: 300;
+      color: var(--gold-light);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      animation: fadeDown 0.6s 0.15s ease both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-meta {
+      color: var(--text-dim);
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      animation: fadeDown 0.6s 0.2s ease both;
+    }
+
+    .hero-meta span {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .hero-meta .dot {
+      color: var(--gold-dim);
+      margin: 0;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Layout ── */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    /* ── Summary cards ── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 64px;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .summary-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .summary-card .sc-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+    .summary-card .sc-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 4px;
+    }
+    .summary-card .sc-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+    .summary-card.good { border-color: rgba(77,170,122,0.2); background: rgba(77,170,122,0.04); }
+    .summary-card.good .sc-title { color: var(--green); }
+
+    /* ── Sections ── */
+    .policy-section {
+      margin-bottom: 52px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-family: 'Crimson Pro', serif;
+      font-size: 13px;
+      color: var(--gold);
+      background: rgba(200,170,100,0.1);
+      border: 1px solid rgba(200,170,100,0.2);
+      border-radius: 6px;
+      width: 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+
+    .section-header h2 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--text-bright);
+      letter-spacing: -0.2px;
+    }
+
+    .section-icon {
+      font-size: 20px;
+      margin-left: auto;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13.5px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 16px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(200,170,100,0.06);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .data-table td:first-child {
+      color: var(--text-bright);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .badge-local { background: rgba(77,170,122,0.15); color: var(--green); border: 1px solid rgba(77,170,122,0.25); }
+    .badge-never { background: rgba(200,80,80,0.12); color: #e08080; border: 1px solid rgba(200,80,80,0.2); }
+    .badge-temp { background: rgba(200,170,100,0.1); color: var(--gold); border: 1px solid rgba(200,170,100,0.2); }
+
+    /* ── Callout box ── */
+    .callout {
+      background: rgba(200,170,100,0.06);
+      border: 1px solid rgba(200,170,100,0.2);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .callout.green {
+      background: rgba(77,170,122,0.06);
+      border-color: rgba(77,170,122,0.2);
+      border-left-color: var(--green);
+    }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: linear-gradient(135deg, var(--bg2), var(--bg3));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .contact-icon { font-size: 36px; flex-shrink: 0; }
+
+    .contact-box h3 {
+      font-family: 'Crimson Pro', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-bright);
+      margin-bottom: 6px;
+    }
+
+    .contact-box p { margin: 0; font-size: 13px; color: var(--text-dim); }
+
+    .contact-box a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    .page-footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .page-footer a { color: var(--gold); text-decoration: none; }
+    .page-footer a:hover { text-decoration: underline; }
+
+    /* ── TOC sidebar for large screens ── */
+    @media (min-width: 1100px) {
+      .layout-wrap {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 60px;
+        max-width: 1020px;
+        margin: 0 auto;
+        padding: 60px 24px 100px;
+      }
+
+      .container { padding: 0; max-width: none; }
+
+      .toc {
+        display: block;
+        position: sticky;
+        top: 40px;
+        align-self: start;
+        font-size: 12px;
+      }
+
+      .toc-title {
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+        font-weight: 600;
+      }
+
+      .toc a {
+        display: block;
+        padding: 6px 0;
+        color: var(--text-dim);
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        padding-left: 12px;
+        transition: all 0.2s;
+        line-height: 1.4;
+      }
+      .toc a:hover {
+        color: var(--gold);
+        border-left-color: var(--gold);
+      }
+    }
+
+    @media (max-width: 1099px) {
+      .toc { display: none; }
+      .layout-wrap { display: block; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .hero { padding: 60px 20px 40px; }
+      .summary-grid { grid-template-columns: 1fr 1fr; }
+      .contact-box { flex-direction: column; text-align: center; }
+      .data-table { font-size: 12px; }
+      .data-table th, .data-table td { padding: 10px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-badge">🔒 Privacy Policy</div>
+  <span class="hero-mosque">🕌</span>
+  <h1>Salah & <em>Wellness Break</em></h1>
+  <div class="hero-meta">
+    <span>Chrome Extension</span>
+    <span class="dot">·</span>
+    <span>By Qayyum Amin</span>
+    <span class="dot">·</span>
+    <span id="effective-date">Effective: 2 April 2025</span>
+  </div>
+</header>
+
+<!-- Main layout -->
+<div class="layout-wrap">
+
+  <!-- TOC (desktop only) -->
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">Contents</div>
+    <a href="#overview">Overview</a>
+    <a href="#data">Data We Collect</a>
+    <a href="#how">How It's Used</a>
+    <a href="#storage">Local Storage</a>
+    <a href="#third-party">Third-Party APIs</a>
+    <a href="#permissions">Permissions</a>
+    <a href="#children">Children</a>
+    <a href="#changes">Changes</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Content -->
+  <main class="container">
+
+    <!-- Summary cards -->
+    <div class="summary-grid">
+      <div class="summary-card good">
+        <span class="sc-icon">🚫</span>
+        <div class="sc-title">No Data Sold</div>
+        <div class="sc-desc">We never sell or share your data with advertisers or third parties.</div>
+      </div>
+      <div class="summary-card good">
+        <span class="sc-icon">💾</span>
+        <div class="sc-title">Stored Locally</div>
+        <div class="sc-desc">All your settings stay on your device only. No servers involved.</div>
+      </div>
+      <div class="summary-card good">
+        <span class="sc-icon">👤</span>
+        <div class="sc-title">No Account</div>
+        <div class="sc-desc">No sign-up, no login, no personal profile created anywhere.</div>
+      </div>
+      <div class="summary-card good">
+        <span class="sc-icon">🌐</span>
+        <div class="sc-title">Minimal Network</div>
+        <div class="sc-desc">Only contacts prayer time & geocoding APIs — nothing else.</div>
+      </div>
+    </div>
+
+    <!-- 1. Overview -->
+    <section class="policy-section" id="overview">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>Overview</h2>
+        <span class="section-icon">📋</span>
+      </div>
+      <p>This Privacy Policy describes how the <strong>Salah & Wellness Break</strong> Chrome Extension ("the Extension", "we", "our") handles your information. The Extension was built to help Muslims combine daily prayer times with short wellness breaks — stretching, posture resets, and breathing exercises.</p>
+      <p>We are committed to protecting your privacy. This extension is designed with a <strong>privacy-first</strong> approach: your data stays on your device, and we do not operate any servers or databases that store your personal information.</p>
+      <div class="callout green">
+        <strong>Simple summary:</strong> We collect the bare minimum needed to show you prayer times. Nothing leaves your device except the city name/coordinates sent to public prayer time APIs.
+      </div>
+    </section>
+
+    <!-- 2. Data We Collect -->
+    <section class="policy-section" id="data">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <h2>Data We Collect</h2>
+        <span class="section-icon">📊</span>
+      </div>
+      <p>The Extension collects only what is strictly necessary to function:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Why</th>
+            <th>Where Stored</th>
+            <th>Shared?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>City name</td>
+            <td>To display your location in the popup</td>
+            <td><span class="badge badge-local">Local only</span></td>
+            <td><span class="badge badge-never">Never</span></td>
+          </tr>
+          <tr>
+            <td>Latitude & Longitude</td>
+            <td>To fetch accurate prayer times from Aladhan API</td>
+            <td><span class="badge badge-local">Local only</span></td>
+            <td><span class="badge badge-temp">API request only</span></td>
+          </tr>
+          <tr>
+            <td>Prayer times</td>
+            <td>To schedule alarms and show countdowns</td>
+            <td><span class="badge badge-local">Local only</span></td>
+            <td><span class="badge badge-never">Never</span></td>
+          </tr>
+          <tr>
+            <td>Language preference</td>
+            <td>English or Bahasa Melayu setting</td>
+            <td><span class="badge badge-local">Local only</span></td>
+            <td><span class="badge badge-never">Never</span></td>
+          </tr>
+          <tr>
+            <td>Notification style</td>
+            <td>Popup or full-screen overlay preference</td>
+            <td><span class="badge badge-local">Local only</span></td>
+            <td><span class="badge badge-never">Never</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>We do <strong>not</strong> collect: your name, email, browsing history, visited URLs, IP address, device identifiers, or any analytics data.</p>
+    </section>
+
+    <!-- 3. How It's Used -->
+    <section class="policy-section" id="how">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <h2>How Your Data Is Used</h2>
+        <span class="section-icon">⚙️</span>
+      </div>
+      <p>Your data is used exclusively to operate the Extension's core features:</p>
+      <p><strong>City coordinates</strong> are sent to the Aladhan.com prayer times API and Nominatim geocoding API once per day to retrieve your local prayer schedule. These are public, open-source APIs that do not require registration and do not track users.</p>
+      <p><strong>Prayer times</strong> are cached locally on your device for the current day so the Extension does not need to make repeated API calls.</p>
+      <p><strong>Preferences</strong> (language, notification style) are saved locally so the Extension remembers your settings between sessions.</p>
+      <div class="callout">
+        Your coordinates are only transmitted as part of an HTTPS API request to fetch prayer times. They are not logged, stored, or processed by us in any way beyond this single purpose.
+      </div>
+    </section>
+
+    <!-- 4. Local Storage -->
+    <section class="policy-section" id="storage">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <h2>Local Storage</h2>
+        <span class="section-icon">💽</span>
+      </div>
+      <p>All data is stored using Chrome's built-in <code>chrome.storage.local</code> API, which saves data directly to your browser on your device. This data:</p>
+      <p>— Is accessible <strong>only to this Extension</strong>, not to websites or other extensions<br>
+         — Is <strong>never synced</strong> to Google's servers (we do not use <code>chrome.storage.sync</code>)<br>
+         — Can be <strong>deleted at any time</strong> by removing the Extension from Chrome<br>
+         — Is automatically cleared if you uninstall the Extension</p>
+    </section>
+
+    <!-- 5. Third-Party APIs -->
+    <section class="policy-section" id="third-party">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <h2>Third-Party APIs</h2>
+        <span class="section-icon">🌐</span>
+      </div>
+      <p>The Extension communicates with two external services:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Data Sent</th>
+            <th>Privacy Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Aladhan.com</strong></td>
+            <td>Fetch Islamic prayer times</td>
+            <td>Latitude, longitude, date</td>
+            <td><a href="https://aladhan.com" target="_blank" rel="noopener" style="color: var(--gold);">aladhan.com</a></td>
+          </tr>
+          <tr>
+            <td><strong>Nominatim<br>(OpenStreetMap)</strong></td>
+            <td>Convert city name to coordinates</td>
+            <td>City name search query</td>
+            <td><a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener" style="color: var(--gold);">OSM Foundation</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>These services are used via standard HTTPS requests. We have no control over their individual privacy practices. Both are widely used, community-oriented services with no known user-tracking behaviour. No authentication tokens or API keys that could be linked to you are sent.</p>
+    </section>
+
+    <!-- 6. Permissions -->
+    <section class="policy-section" id="permissions">
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <h2>Chrome Permissions</h2>
+        <span class="section-icon">🔑</span>
+      </div>
+      <p>The Extension requests the following Chrome permissions, each used strictly as described:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why We Need It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>storage</strong></td>
+            <td>Save your city, prayer times, and preferences locally on your device.</td>
+          </tr>
+          <tr>
+            <td><strong>alarms</strong></td>
+            <td>Schedule prayer time alerts that fire at the correct time each day.</td>
+          </tr>
+          <tr>
+            <td><strong>notifications</strong></td>
+            <td>Show a Chrome popup notification when prayer time arrives (if Popup mode is selected).</td>
+          </tr>
+          <tr>
+            <td><strong>scripting</strong></td>
+            <td>Inject the full-screen wellness break overlay onto the active tab when prayer time arrives.</td>
+          </tr>
+          <tr>
+            <td><strong>activeTab</strong></td>
+            <td>Access the currently active browser tab to display the overlay on it.</td>
+          </tr>
+          <tr>
+            <td><strong>tabs</strong></td>
+            <td>Query the active tab to determine where to show the overlay.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        The <strong>scripting</strong> and <strong>activeTab</strong> permissions are used only at the moment a prayer alarm fires, to display the wellness break overlay. We do not read the content of web pages, capture screenshots, or monitor your browsing activity in any way.
+      </div>
+    </section>
+
+    <!-- 7. Children -->
+    <section class="policy-section" id="children">
+      <div class="section-header">
+        <div class="section-num">7</div>
+        <h2>Children's Privacy</h2>
+        <span class="section-icon">👶</span>
+      </div>
+      <p>This Extension does not knowingly collect any personal information from children under the age of 13. The Extension does not require account creation or any form of personal data submission, making it safe for users of all ages.</p>
+    </section>
+
+    <!-- 8. Changes -->
+    <section class="policy-section" id="changes">
+      <div class="section-header">
+        <div class="section-num">8</div>
+        <h2>Changes to This Policy</h2>
+        <span class="section-icon">📝</span>
+      </div>
+      <p>We may update this Privacy Policy from time to time. Any changes will be reflected by updating the effective date at the top of this page. We encourage you to review this page periodically.</p>
+      <p>Continued use of the Extension after any changes constitutes acceptance of the updated policy. As this Extension collects no personal data, changes are unlikely to affect your privacy in any meaningful way.</p>
+    </section>
+
+    <!-- 9. Contact -->
+    <section class="policy-section" id="contact">
+      <div class="section-header">
+        <div class="section-num">9</div>
+        <h2>Contact</h2>
+        <span class="section-icon">✉️</span>
+      </div>
+      <p>If you have any questions or concerns about this Privacy Policy, please reach out:</p>
+
+      <div class="contact-box">
+        <div class="contact-icon">👤</div>
+        <div>
+          <h3>Qayyum Amin</h3>
+          <p>Developer of Salah & Wellness Break<br>
+          GitHub: <a href="https://github.com/qayyumamin54" target="_blank" rel="noopener">github.com/qayyumamin54</a><br>
+          Instagram / Threads: <a href="https://instagram.com/qayyum.amin" target="_blank" rel="noopener">@qayyum.amin</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer">
+  <p>© 2025 Qayyum Amin · Salah & Wellness Break · <a href="https://github.com/qayyumamin54" target="_blank" rel="noopener">GitHub</a></p>
+  <p style="margin-top: 6px;">This policy applies to the Chrome Extension only. Last updated: <span id="footer-date">2 April 2025</span></p>
+</footer>
+
+<script>
+  // Stagger section animations on scroll
+  const sections = document.querySelectorAll('.policy-section');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.animationDelay = '0s';
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(s => {
+    s.style.opacity = '0';
+    s.style.transform = 'translateY(20px)';
+    s.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    obs.observe(s);
+  });
+
+  // TOC active link highlight
+  const tocLinks = document.querySelectorAll('.toc a');
+  const sectionEls = document.querySelectorAll('section[id]');
+  const tocObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocLinks.forEach(l => l.style.color = '');
+        const active = document.querySelector(`.toc a[href="#${e.target.id}"]`);
+        if (active) {
+          active.style.color = 'var(--gold)';
+          active.style.borderLeftColor = 'var(--gold)';
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sectionEls.forEach(s => tocObs.observe(s));
+</script>
+</body>
+</html>
